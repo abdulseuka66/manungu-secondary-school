@@ -1,0 +1,702 @@
+<!DOCTYPE html> <html lang="sw"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manungu Secondary School | Kongwa - Dodoma</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #f5f8fb;
+    }
+
+    /* NAVIGATION */
+    header {
+        background: #063b2d;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #f4c542;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #f4c542;
+    }
+
+    /* HERO */
+    .hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(rgba(0,59,45,0.82), rgba(0,59,45,0.82)),
+        url("image/staff.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        margin-bottom: 15px;
+    }
+
+    .hero h2 {
+        color: #f4c542;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #f4c542;
+        color: #063b2d;
+        padding: 13px 25px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: white;
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 75px 20px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        color: #063b2d;
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .section-title p {
+        color: #666;
+    }
+
+    /* ABOUT */
+    .about {
+        background: white;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .about-image {
+        min-height: 330px;
+        border-radius: 15px;
+
+        background:
+            linear-gradient(rgba(0,59,45,0.25), rgba(0,59,45,0.25)),
+            url( <img src="image/staff.jpg" alt="Wanafunzi wa Manungu Secondary School">);
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .about-text h3 {
+        color: #063b2d;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    /* CARDS */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .card .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .card h3 {
+        color: #063b2d;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #666;
+    }
+
+    /* STATS */
+    .stats {
+        background: #063b2d;
+        color: white;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+        gap: 20px;
+    }
+
+    .stat h2 {
+        color: #f4c542;
+        font-size: 40px;
+    }
+
+    .stat p {
+        font-size: 17px;
+    }
+
+    /* GALLERY */
+    .gallery {
+        background: white;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 230px;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.08);
+    }
+
+    /* CONTACT */
+    .contact {
+        background: #eef5f2;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .contact-box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .contact-box h3 {
+        color: #063b2d;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        margin-bottom: 15px;
+    }
+
+    .contact-info strong {
+        color: #063b2d;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    form textarea {
+        height: 130px;
+        resize: none;
+    }
+
+    form button {
+        border: none;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #03291f;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    .footer-highlight {
+        color: #f4c542;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+        .navbar {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+        }
+
+        .about-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head> <body> <!-- NAVIGATION --> <header> <div class="navbar">
+    <div class="logo">
+        MANUNGU <span>SECONDARY</span>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Kuhusu</a></li>
+            <li><a href="#academics">Masomo</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Mawasiliano</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</header> <!-- HERO --> <section class="hero" id="home">
+<div class="hero-content">
+
+    <h1>Manungu Secondary School</h1>
+
+    <h2>Elimu Bora • Nidhamu • Mafanikio</h2>
+
+    <p>
+        Karibu Manungu Secondary School, shule inayolenga
+        kujenga wanafunzi wenye maarifa, nidhamu, ubunifu
+        na uwezo wa kuchangia maendeleo ya jamii.
+    </p>
+
+    <a href="#about" class="btn">Jifunze Kuhusu Sisi</a>
+
+    <a href="#contact" class="btn btn-outline">Wasiliana Nasi</a>
+
+</div>
+
+</section> <!-- ABOUT --> <section class="about" id="about">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Kuhusu Shule Yetu</h2>
+        <p>Manungu Secondary School — Kongwa, Dodoma</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <h3>Karibu Manungu Secondary School</h3>
+
+            <p>
+                Manungu Secondary School ipo katika Wilaya ya
+                Kongwa, Mkoa wa Dodoma.
+            </p>
+
+            <p>
+                Tunajenga mazingira bora ya kujifunzia kwa
+                kuzingatia elimu, nidhamu, ubunifu na
+                maendeleo ya mwanafunzi.
+            </p>
+
+            <p>
+                Lengo letu ni kuwaandaa wanafunzi kuwa raia
+                wenye maarifa, maadili na uwezo wa kukabiliana
+                na changamoto za dunia ya kisasa.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- ACADEMICS --> <section id="academics">
+<div class="container">
+
+   <section id="academics">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Masomo Tunayofundisha</h2>
+            <p>Masomo yanayotolewa Manungu Secondary School</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">📐</div>
+                <h3>Hisabati</h3>
+                <p>
+                    Wanafunzi hujifunza maarifa na stadi za
+                    hisabati kwa ajili ya maisha na masomo yao.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔬</div>
+                <h3>Biology</h3>
+                <p>
+                    Masomo ya viumbe hai, afya, mazingira
+                    na maisha ya binadamu.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚗️</div>
+                <h3>Chemistry</h3>
+                <p>
+                    Wanafunzi hujifunza kanuni za kemia
+                    pamoja na majaribio ya kisayansi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Physics</h3>
+                <p>
+                    Masomo ya nguvu, mwendo, nishati,
+                    umeme na mambo mbalimbali ya fizikia.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌍</div>
+                <h3>Geography</h3>
+                <p>
+                    Wanafunzi hujifunza mazingira, jiografia
+                    na uhusiano wa binadamu na mazingira.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📖</div>
+                <h3>English</h3>
+                <p>
+                    Kujenga uwezo wa kusoma, kuandika,
+                    kuzungumza na kuelewa lugha ya Kiingereza.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📝</div>
+                <h3>Kiswahili</h3>
+                <p>
+                    Lugha, fasihi, mawasiliano na matumizi
+                    sahihi ya Kiswahili.
+                </p>
+            </div>
+<div class="card">
+                <div class="icon">📝</div>
+                <h3>Business studies</h3>
+                <p>
+                    Biashara, kwa ajili ya elimu ya Biashara
+                    na kujiajili binafsi.
+                </p>
+            </div>
+<div class="card">
+                <div class="icon">📝</div>
+                <h3>Historia na Maadili</h3>
+                <p>
+                    Maadili, utamaduni na maadili ya
+                    Mtanzania.
+                </p>
+            </div>
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Computer Studies</h3>
+                <p>
+                    Wanafunzi hujifunza matumizi ya kompyuta,
+                    TEHAMA na teknolojia.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏛️</div>
+                <h3>Historia</h3>
+                <p>
+                    Kujifunza historia ya Tanzania, Afrika
+                    na dunia pamoja na matukio muhimu.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+</section> <!-- GALLERY --> <section class="gallery" id="gallery">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Gallery</h2>
+        <p>Picha za shule na shughuli mbalimbali</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="image/walimu 1.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+
+        <div class="gallery-item">
+           <img src="image/walimu 2.jpg" alt="Wanafunzi wa Manungu Secondary School">
+
+        </div>
+
+        <div class="gallery-item">
+             <img src="image/walimu 2.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+
+        <div class="gallery-item">
+            <img src="image/walimu 3.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+
+        <div class="gallery-item">
+            <img src="image/wanafunzi 1.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+<div class="gallery-item">
+            <img src="image/wanafunzi 3.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+        <div class="gallery-item">
+             <img src="image/wanafunzi 1.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+<div class="gallery-item">
+            <img src="image/comp 1.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+<div class="gallery-item">
+            <img src="image/comp 2.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+<div class="gallery-item">
+            <img src="image/comp 3.jpg" alt="Wanafunzi wa Manungu Secondary School">
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- CONTACT --> <section class="contact" id="contact">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Wasiliana Nasi</h2>
+        <p>Tungependa kusikia kutoka kwako</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+
+            <h3>Maelezo ya Mawasiliano</h3>
+
+            <div class="contact-info">
+                <strong>🏫 Shule:</strong>
+                Manungu Secondary School
+            </div>
+
+            <div class="contact-info">
+                <strong>📍 Eneo:</strong>
+                Kongwa, Dodoma, Tanzania
+            </div>
+
+            <div class="contact-info">
+                <strong>📞 Simu:</strong>
+                0716911243
+            </div>
+
+            <div class="contact-info">
+                <strong>✉️ Email:</strong>
+                mlimbamarry@gmail.com
+            </div>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>Tuma Ujumbe</h3>
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Jina lako"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Email yako"
+                    required
+                >
+
+                <textarea
+                    placeholder="Andika ujumbe wako..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Tuma Ujumbe
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- FOOTER --> <footer>
+<p>
+    © 2026 <span class="footer-highlight">
+    Manungu Secondary School
+    </span>
+</p>
+
+<p>
+    Kongwa, Dodoma — Tanzania
+</p>
+
+<p>
+    Elimu Bora • Nidhamu • Mafanikio
+</p>
+
+</footer> </body> </html>
